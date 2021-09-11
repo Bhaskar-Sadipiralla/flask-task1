@@ -4,7 +4,7 @@ from flaskext.mysql import MySQL
 mysql = MySQL()
 app = Flask(__name__)
 app.config.from_pyfile('database.cfg')
-app.config.from_pyfile('/etc/dbhost.cfg')
+app.config.from_pyfile('dbhost.cfg')
 
 mysql.init_app(app)
 
@@ -15,7 +15,7 @@ def main():
 
 def showVersion():
     try:
-        myfile = '/tmp/app-version.txt'
+        myfile = 'app-file.txt'
         with open(myfile) as f:
             message = '{0}'.format(f.read())
     except IOError:
